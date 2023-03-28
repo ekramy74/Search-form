@@ -8,7 +8,7 @@ function App() {
     const [form] = Form.useForm();
     const [searchState, searchDispatch] = useReducer(SearchReducer, SearchInitialState)
     const getResults = useCallback((values) => {
-            if (Object.values(values).every((item) => item === ''|| item === undefined)) {
+            if (Object.values(values).every((item) => item === '' || item === undefined)) {
                 notification.warning({
                     message: 'Warning',
                     description: 'Please fill at least one field to search',
@@ -27,11 +27,11 @@ function App() {
             APIRequest('integration/focal/screen/individual', 'POST', body, (res) => {
                     searchDispatch({type: SearchActionTypes.SET_RESULTS, payload: res.data.screen_result})
                 },
-                () => {
+                (error) => {
                     searchDispatch({type: SearchActionTypes.SET_LOADING, payload: false})
                     notification.error({
                         message: 'Error',
-                        description: 'Something went wrong, please try again later',
+                        description: error?.data?.error || 'Something went wrong, please try again later',
                         duration: 2,
                         placement: 'topRight',
                     })

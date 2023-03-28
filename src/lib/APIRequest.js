@@ -23,6 +23,6 @@ export const APIRequest = (url, method, data, onSuccess, onError) => {
             onSuccess(res);
         }
     ).catch((error) => {
-        onError(error);
+        onError(error.response);
     })
 }
