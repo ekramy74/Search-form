@@ -1,38 +1,226 @@
 .App {
-  text-align: center;
+    height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App h3 {
+    margin: 0;
+    padding-bottom: 5px;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #333;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url("Assets/imgs/backgroun.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 25rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.header h3 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #ffffff;
+    padding-bottom: 5px;
+    margin: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.slogan {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #ffffff;
+    padding-bottom: 15px;
+    margin: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search-card {
+    margin: 0 auto;
+    width: 80%;
+    border: 1px solid #ccc;
+    padding: 0 20px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.search-card h4 {
+    margin: 0;
+    padding: 10px 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.search-results {
+    dispaly: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.skeleton {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 50px;
+}
+
+.results {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    width: 25%;
+    height: max-content;
+    margin: 20px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.card-header {
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+    height: 50%;
+    padding-top: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+.name {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 5px 10px;
+    padding: 0 10px;
+    height: 80%;
+    border-left: 5px solid #519cbc;
+}
+
+.name p {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 90%;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.name span {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: #333;
+}
+
+.score {
+    color: #23c700 !important;
+    font-weight: 600 !important;
+    margin-left: 5px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 10px;
+    width: 100%;
+}
+
+.card-body-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 5px 0;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+}
+
+.card-body-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: #333;
+}
+
+.card-body-item span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+    margin-left: 5px;
+}
+
+.divider {
+    height: 1px;
+    background-color: #ccc;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.form-btns {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 0;
+}
+
+.form-btns button {
+    margin: 0 5px;
+}
+
+.form-btns button:first-child {
+    background-color: #519cbc;
+}
+
+.ant-float-btn-body {
+    background-color: #519cbc !important;
+}
+
+.ant-float-btn-body:hover {
+    background-color: #0170a6 !important;
+}
+
+.ant-float-btn-icon {
+    color: #ffffff !important;
+}
+.no-results{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+    }
+    .header{
+        height: 43rem;
+    }
+    .slogan{
+        font-size: 1.5rem;
+        padding: 10px 20px;
+    }
+    .search-card{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+@media (max-width: 920px) {
+    .card {
+        width: 40%;
+    }
 }
