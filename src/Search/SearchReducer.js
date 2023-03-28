@@ -2,6 +2,7 @@
 export const SearchActionTypes = {
     SET_LOADING: 'SET_LOADING',
     SET_RESULTS: 'SET_RESULTS',
+    CLEAR_RESULTS: 'CLEAR_RESULTS',
 }
 export const SearchInitialState = {
     loading: false,
@@ -33,6 +34,8 @@ export const SearchReducer = (state = SearchInitialState, action) => {
                 results: results,
                 loading: false,
             }
+        case SearchActionTypes.CLEAR_RESULTS:
+            return {...state, results: []}
         default:
             return state
     }

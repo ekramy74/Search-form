@@ -1,8 +1,5 @@
 import axios from "axios";
 
-export const headersConfig = {
-    baseUrl: process.env.NODE_ENV === 'development' ? process.env.REACT_APP_BASE_API_URL : process.env.REACT_APP_BASE_URL_PRODUCTION
-}
 
 function requestHeaders() {
 
@@ -20,7 +17,8 @@ export const APIRequest = (url, method, data, onSuccess, onError) => {
         method: method,
         url: `${baseUrl}${url}`,
         data: data,
-        headers: requestHeaders()
+        headers: requestHeaders(),
+        mode: 'cors',
     }).then((res) => {
             onSuccess(res);
         }

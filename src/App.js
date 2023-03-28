@@ -38,6 +38,10 @@ function App() {
                 })
         },
         [])
+    const clearForm = () => {
+        form.resetFields();
+        searchDispatch({type: SearchActionTypes.CLEAR_RESULTS})
+    }
 
     return (
         <div className="App">
@@ -74,7 +78,7 @@ function App() {
                         <div className={'form-btns'}>
                             <Button type={'primary'} size={'small'}
                                     onClick={() => getResults(form.getFieldsValue())}>Search</Button>
-                            <Button type={'default'} size={'small'} onClick={() => form.resetFields()}>Clear</Button>
+                            <Button type={'default'} size={'small'} onClick={() => clearForm()}>Clear</Button>
                         </div>
                     </Form>
                 </div>
